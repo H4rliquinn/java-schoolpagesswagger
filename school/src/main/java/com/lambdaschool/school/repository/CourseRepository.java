@@ -2,14 +2,16 @@ package com.lambdaschool.school.repository;
 
 import com.lambdaschool.school.model.Course;
 import com.lambdaschool.school.view.CountStudentsInCourses;
+import io.swagger.annotations.ApiModel;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public interface CourseRepository extends CrudRepository<Course, Long>
+public interface CourseRepository extends PagingAndSortingRepository<Course, Long>
 {
     ArrayList<Course> findCoursesByCoursenameEquals(String name);
 
